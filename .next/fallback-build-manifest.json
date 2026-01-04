@@ -1,0 +1,12 @@
+{
+  "pages": {
+    "/_app": []
+  },
+  "devFiles": [],
+  "polyfillFiles": [],
+  "lowPriorityFiles": [
+    "static/TUR48sQ_SAL8Bn4XvhLa1/_ssgManifest.js",
+    "static/TUR48sQ_SAL8Bn4XvhLa1/_buildManifest.js"
+  ],
+  "rootMainFiles": []
+}
