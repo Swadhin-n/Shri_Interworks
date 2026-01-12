@@ -99,10 +99,10 @@ export default function Home() {
               </GlassCard>
               <GlassCard>
                 <p className="text-2xl font-bold text-primary">500+</p>
-                <p className="text-sm text-muted-foreground mt-2">Workers Placed</p>
+                <p className="text-sm text-muted-foreground mt-2">{getTranslation(language, "company.workers_placed")}</p>
               </GlassCard>
               <GlassCard className="col-span-2 sm:col-span-1">
-                <p className="text-xs font-medium text-primary">Certified</p>
+                <p className="text-xs font-medium text-primary">{getTranslation(language, "company.certified")}</p>
                 <p className="text-sm text-muted-foreground mt-1">{getTranslation(language, "company.license")}</p>
               </GlassCard>
             </div>
@@ -209,7 +209,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
               {getTranslation(language, "contact.subtitle")}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">Ready to transform your team with exceptional talent?</p>
+            <p className="text-lg text-muted-foreground mb-8">{getTranslation(language, "contact.ready_transform")}</p>
             <button
               onClick={() => handleNavClick("/contact")}
               className="btn-glow inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 font-semibold text-primary-foreground transition-all hover:bg-primary/90 active:scale-95 text-lg"

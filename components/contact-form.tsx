@@ -32,10 +32,10 @@ export function ContactForm() {
         e.currentTarget.reset()
         setTimeout(() => setSubmitted(false), 5000)
       } else {
-        setError("Failed to send message. Please try again.")
+        setError(getTranslation(language, "contact.error_send"))
       }
     } catch (err) {
-      setError("An error occurred. Please try again later.")
+      setError(getTranslation(language, "contact.error_generic"))
       console.error(err)
     } finally {
       setLoading(false)
@@ -49,7 +49,7 @@ export function ContactForm() {
         <div>
           <h3 className="text-xl font-bold mb-4">SHRI INTERWORKS</h3>
           <p className="text-muted-foreground mb-6">
-            Ready to find the perfect talent for your business? Get in touch with us today.
+            {getTranslation(language, "contact.info_description")}
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export function ContactForm() {
           <div className="flex gap-4">
             <Mail className="h-6 w-6 text-primary flex-shrink-0" />
             <div>
-              <p className="font-semibold mb-1">Email</p>
+              <p className="font-semibold mb-1">{getTranslation(language, "contact.email_label")}</p>
               <a
                 href="mailto:info@shriinterworks.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -70,7 +70,7 @@ export function ContactForm() {
           <div className="flex gap-4">
             <Phone className="h-6 w-6 text-primary flex-shrink-0" />
             <div>
-              <p className="font-semibold mb-1">Phone</p>
+              <p className="font-semibold mb-1">{getTranslation(language, "contact.phone_label")}</p>
               <a href="tel:+40268123456" className="text-muted-foreground hover:text-primary transition-colors">
                 +40 (268) 123-456
               </a>
@@ -80,7 +80,7 @@ export function ContactForm() {
           <div className="flex gap-4">
             <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
             <div>
-              <p className="font-semibold mb-1">Location</p>
+              <p className="font-semibold mb-1">{getTranslation(language, "contact.location_label")}</p>
               <p className="text-muted-foreground">Brașov, Romania</p>
             </div>
           </div>
@@ -88,13 +88,13 @@ export function ContactForm() {
 
         <div className="pt-6 border-t border-border">
           <p className="text-xs text-muted-foreground">
-            <strong>Business Hours:</strong>
+            <strong>{getTranslation(language, "contact.business_hours")}</strong>
             <br />
-            Monday - Friday: 9 AM - 6 PM
+            {getTranslation(language, "contact.hours_weekday")}
             <br />
-            Saturday: 10 AM - 2 PM
+            {getTranslation(language, "contact.hours_saturday")}
             <br />
-            Sunday: Closed
+            {getTranslation(language, "contact.hours_sunday")}
           </p>
         </div>
       </div>
@@ -103,7 +103,7 @@ export function ContactForm() {
       <div className="lg:col-span-2">
         {submitted ? (
           <div className="rounded-lg border border-green-200 bg-green-50 p-8 text-center">
-            <p className="text-lg font-semibold text-green-900 mb-2">Message Sent Successfully!</p>
+            <p className="text-lg font-semibold text-green-900 mb-2">{getTranslation(language, "contact.message_sent")}</p>
             <p className="text-green-700">{getTranslation(language, "contact.success")}</p>
           </div>
         ) : (
@@ -178,7 +178,7 @@ export function ContactForm() {
               className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground transition-all hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading && <Loader className="h-4 w-4 animate-spin" />}
-              {loading ? "Sending..." : getTranslation(language, "contact.submit")}
+              {loading ? getTranslation(language, "contact.sending") : getTranslation(language, "contact.submit")}
             </button>
           </form>
         )}
