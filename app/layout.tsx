@@ -52,6 +52,7 @@ export default function RootLayout({
         <title>SHRI INTERWORKS - European Manpower Solutions</title>
         <meta name="description" content="Connecting skilled Asian talent with European opportunities" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="XjHYzgGXzdJJXt-6V6GoL4QK4h_yrQ8d4ttECwF5QYU" />
         <link rel="icon" type="image/webp" href="/logo.webp" />
         <link rel="canonical" href="https://interworks.ro" />
         

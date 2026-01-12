@@ -85,7 +85,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="border-t border-white/10 dark:border-white/5 mt-8 pt-8 text-center text-sm text-muted-foreground">
           {getTranslation(language, "footer.rights")}
-          <p className="mt-3 text-xs">Made with <span className="text-white">❤️</span> by Swadhin Upadhyay</p>
+          <p className="mt-3 text-xs">Made with <span className="text-white">🤍</span> by Swadhin Upadhyay</p>
         </div>
       </div>
     </footer>

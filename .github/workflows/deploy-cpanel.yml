@@ -1,4 +1,5 @@
-name: Deploy to cPanel via SSH
+
+name: Deploy to cPanel via FTP
 
 on:
   push:
@@ -20,22 +21,17 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       
       - name: Build static site
         run: npm run build
       
-      - name: Deploy to cPanel
-        uses: appleboy/ssh-action@master
+      - name: Deploy to cPanel (FTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            cd ~/projects/shri_interworks
-            git pull origin main
-            npm install
-            npm run build
-            rm -rf ~/public_html/*
-            cp -r out/* ~/public_html/
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/
+          local-dir: ./out/
+          dangerous-clean-slate: true
