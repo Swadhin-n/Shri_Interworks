@@ -25,6 +25,8 @@ jobs:
       
       - name: Build static site
         run: npm run build
+        env:
+          LIGHTNINGCSS_IGNORE_NATIVE: '1'
       
       - name: Deploy to cPanel (FTP)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
