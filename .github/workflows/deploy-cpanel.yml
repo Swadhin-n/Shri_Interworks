@@ -26,6 +26,7 @@ jobs:
       - name: Build static site
         run: npm run build
         env:
+          NEXT_DISABLE_LIGHTNINGCSS: '1'
           LIGHTNINGCSS_IGNORE_NATIVE: '1'
       
       - name: Deploy to cPanel (FTP)
